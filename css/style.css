@@ -13,50 +13,77 @@ img {
 	z-index: -1;
 	opacity: 66%;
 }
+#changeBGs {
+	justify-content: center;
+	align-items: center;
+}
 
-button {
-	font-size: 20px;
+#BGguide {
+	font-size: 15px;
+	top: 50px;
+	position: absolute;
+	right: 175px;
+	color: #eeeeee;
+	opacity: 75%;
+	font-family: "Roboto";
+}
+
+#changeBGbtn {
+	position: absolute;
+	top: 30px;
+	right: 50px;
+	opacity: 75%;
+	font-family: "Roboto";
 }
 
 #weather {
-	color: #eeeeee;
 	position: absolute;
 	font-size: 17px;
 	top: 50px;
 	left: 60px;
 	font-weight: bold;
+	font-family: "Roboto";
+	background-color: transparent;
+	opacity: 75%;
 }
+
 .clockContainer {
 	margin-top: 200px;
 }
 
 #clock {
 	color: #eeeeee;
-	font-size: 200px;
-	text-shadow: -1px -1px 3px #444444;
+	font-size: 250px;
+	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
 	font-family: "Roboto";
+	opacity: 80%;
 }
 
-.am {
+.am,
+.pm {
 	padding-left: 20px;
 	color: #eeeeee;
-	text-shadow: -1px -1px 3px #444444;
+	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
-	font-size: 100px;
+	font-size: 125px;
+	opacity: 80%;
+}
+
+input {
+	outline: none;
 }
 
 #loginInput {
-	color: #111111;
+	color: #eeeeee;
 	position: relative;
 	display: block;
 	padding-left: 15px;
 	font-size: 60px;
 	font-style: italic;
-	margin-top: 50px;
-	background-color: #eeeeee;
-	opacity: 60%;
-	font-family: "GimpoGothic";
+	background-color: transparent;
+	opacity: 70%;
+	font-family: "Roboto";
 	cursor: pointer;
 	border-width: 4px;
 	border-top: none;
@@ -64,24 +91,29 @@ button {
 	border-left: none;
 	border-bottom-color: #eeeeee;
 }
+.greetingContainer {
+	width: 1000px;
+	box-sizing: content-box;
+}
 
 #greeting {
 	color: #eeeeee;
 	text-align: center;
 	font-size: 60px;
-	text-shadow: 0.5px 0.5px 3px #444444;
+	/* text-shadow: 0.5px 0.5px 3px #444444; */
 	font-family: "Roboto";
+	opacity: 80%;
 }
 
 #todoInput {
 	font-size: 30px;
 	font-style: italic;
-	font-family: "GimpoGothic";
+	font-family: "Roboto";
 	color: #eeeeee;
 	padding-left: 10px;
 	cursor: pointer;
 	background-color: transparent;
-	opacity: 60%;
+	opacity: 70%;
 	border-width: 4px;
 	border-top: none;
 	border-right: none;
@@ -91,19 +123,21 @@ button {
 	box-shadow: inset;
 }
 
+::placeholder {
+	color: #eeeeee;
+	opacity: 80%;
+}
+
 li {
 	color: #eeeeee;
 	font-size: 25px;
 }
 
-button {
-	opacity: 70%;
-}
-
 #todo-list {
 	list-style: none;
-	font-family: "GimpoGothic";
+	font-family: "Roboto";
 	font-weight: 500;
+	opacity: 80%;
 }
 
 .saying {
@@ -115,12 +149,9 @@ button {
 	color: #eeeeee;
 	font-size: 17px;
 	text-align: center;
-	/* font-family: "Spoqa Han Sans Neo"; */
 }
 
 #quote {
 	font-family: "DX영화자막";
-}
-
-#author {
+	opacity: 70%;
 }

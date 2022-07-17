@@ -6,7 +6,7 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
 const emojis = [
-    "😎", "🥰", "👻", "🤩", "🤗"
+    "😎", "😊", "👻", "🤩", "🤗", "👩‍💻", "👨‍💻"
 ];
 
 const comments = [
@@ -27,11 +27,16 @@ function onLoginSubmit(event) {
     paintGreetings(username);
 }
 
+function changeGreeting(todayComment, username) {
+    const chosenEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+    greeting.innerText = `${todayComment} ${username} ${chosenEmoji}`;
+}
+
 function paintGreetings(username) {
     const date = new Date();
     const todayComment = comments[date.getDay()];
-    const chosenEmoji = emojis[Math.floor(Math.random() * emojis.length)];
-    greeting.innerText = `${todayComment} ${username} ${chosenEmoji}`;
+    changeGreeting(todayComment, username);
+    setInterval(changeGreeting, 10000, todayComment, username);
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

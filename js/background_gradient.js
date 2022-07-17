@@ -19,14 +19,18 @@ const colors = [
     "#ff3f34"
 ];
 
+const btn = document.querySelector("button");
+
 function changeBGcolor() {
     const a = colors[Math.round(Math.random() * colors.length)];
     const b = colors[Math.round(Math.random() * colors.length)];
     if (a === b) {
-        return handleClick();
+        return changeBGcolor();
     }
     document.body.style.background = `linear-gradient(to left, ${a}, ${b})`;
 }
 
 changeBGcolor();
-setInterval(changeBGcolor, 20000);
+setInterval(changeBGcolor, 86400000); // update everyday
+
+btn.addEventListener("click", changeBGcolor);

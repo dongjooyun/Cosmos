@@ -11,11 +11,20 @@
     <title>Cosmos</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <div class="container">
+        <div id="changeBGs" class="row d-flex justify-content-end align-items-end">
+            <span id="BGguide">
+                If background color is white, click 👉
+            </span>
+            <div id="changeBGbtnArea">
+                <button id="changeBGbtn" class="btn btn-light btn-sm shadow-sm mt-3">Change
+                    BG
+                    color</button>
+            </div>
+        </div>
         <div id="weather" class="row">
-            <div class="col-lg-12 shadow-sm p-3 rounded">
-                <span></span>
+            <div class="col-lg-12 shadow p-3 rounded bg-light">
                 <span></span>
                 <span></span>
             </div>
@@ -29,21 +38,19 @@
         </div>
         <div class="row">
             <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
-                <form class="hidden mx-auto" id="login-form">
-                    <input required id="loginInput" class="rounded" maxlength="15" type="text"
-                        placeholder="Type your name here." />
-                    <!-- <input type="submit" value="Log In" /> -->
+                <form class="hidden mx-auto m-2" id="login-form">
+                    <input required id="loginInput" maxlength="15" type="text" placeholder="Type your name here." />
                 </form>
             </div>
         </div>
         <div class="row">
-            <div class="col-12 mx-auto d-flex m-3">
-                <h1 id="greeting" class="hidden mx-auto font-italic"></h1>
+            <div class="greetingContainer col-lg-12 mx-auto d-flex m-2">
+                <h1 id="greeting" class="hidden mx-auto"></h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
-                <form id="todo-form" class="mx-auto mt-3">
+                <form id="todo-form" class="mx-auto mt-5">
                     <input required id="todoInput" type="text" placeholder="Add your ToDo here." />
                 </form>
             </div>
@@ -53,15 +60,16 @@
                 <ul id="todo-list" class="mt-5"></ul>
             </div>
         </div>
-        <hr class="my-5">
-
-        <div id="quote" class="row col-12 mx-auto d-flex">
-            <div class="mx-auto quoteSet mb-5 shadow p-5 rounded">
-                <span class="font-italic"></span>
-                <hr class="my-3">
-                <span></span>
+        <footer class="py-1 mt-auto">
+            <hr class="my-5">
+            <div id="quote" class="row col-12 mx-auto d-flex">
+                <div class="mx-auto quoteSet mb-5 shadow p-5 rounded">
+                    <span class="font-italic"></span>
+                    <hr class="my-3">
+                    <span></span>
+                </div>
             </div>
-        </div>
+        </footer>
     </div>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

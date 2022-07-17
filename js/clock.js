@@ -5,11 +5,10 @@ function getClock() {
     const date = new Date();
     const minutes = String(date.getMinutes()).padStart(2, "0");
 
-    let curHour = date.getHours();
-    if (curHour >= 18 || curHour < 6) { // 18 ~ 24(0) & 1 ~ 5: MOON
+    const curHour = date.getHours();
+    if (curHour >= 18 || curHour < 6) { // 오후 6시 ~ 새벽 5시
         if (curHour === 0) {
-            curHour = 12;
-            const hours = String(curHour).padStart(2, "0");
+            const hours = String(curHour + 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
         }
         else if (curHour >= 18) {
@@ -21,9 +20,9 @@ function getClock() {
             clock.innerText = `${hours}:${minutes}`;
         }
     }
-    else { // 6 ~ 17: SUN
-        if (curHour >= 12) {
-            const hours = String(curHour).padStart(2, "0");
+    else { // 새벽 6시 ~ 오후 5시
+        if (curHour > 12) {
+            const hours = String(curHour - 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
         }
         else {
@@ -43,22 +42,22 @@ pm.innerText = "PM";
 am.classList.add("am");
 pm.classList.add("pm");
 
-const curHourFromText = parseInt(clock.innerText.substr(0, 2), 10);
-console.log(curHourFromText);
+const date = new Date();
+const hourAMPM = date.getHours();
 
-if (curHourFromText >= 18 || curHourFromText < 6) { // 18 ~ 24(0) & 1 ~ 5: MOON
-    if (curHourFromText === 0) {
+if (hourAMPM >= 18 || hourAMPM < 6) {
+    if (hourAMPM === 0) {
         wholeClock.appendChild(am);
     }
-    else if (curHourFromText >= 18) {
+    else if (hourAMPM >= 18) {
         wholeClock.appendChild(pm);
     }
     else {
         wholeClock.appendChild(am);
     }
 }
-else { // 6 ~ 17: SUN
-    if (curHourFromText >= 12) {
+else {
+    if (hourAMPM >= 12) {
         wholeClock.appendChild(pm);
     }
     else {

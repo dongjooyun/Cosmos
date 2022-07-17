@@ -4,8 +4,18 @@ const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
 const TODOS_KEY = "todos";
+const ARCHIVES_KEY = "archives";
 
 let toDos = [];
+let archiveArr = [];
+
+function addArchives(newArch) {
+    archiveArr.push(newArch);
+}
+
+function saveArchives() {
+    localStorage.setItem(ARCHIVES_KEY, JSON.stringify(archiveArr));
+}
 
 function saveToDos() {
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
@@ -16,6 +26,8 @@ function deleteToDo(event) {
     li.remove();
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveToDos();
+    // addArchives(toDo);
+    // saveArchives();
 }
 
 function paintToDo(newToDo) {
@@ -28,7 +40,7 @@ function paintToDo(newToDo) {
     const button = document.createElement("button");
     button.innerText = "✔";
     button.type = "button";
-    button.classList.add("btn", "btn-outline-danger", "border-0", "btn-lg", "shadow-sm");
+    button.classList.add("btn", "btn-light", "border-0", "btn-lg", "shadow-sm");
     button.addEventListener("click", deleteToDo);
     li.appendChild(button);
     li.appendChild(span);
@@ -44,7 +56,8 @@ function handleToDoSubmit(event) {
         text: newToDo,
         id: Date.now()
     };
-    toDos.push(newToDoObj); paintToDo(newToDoObj);
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
     saveToDos();
 }
 

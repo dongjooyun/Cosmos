@@ -14,6 +14,8 @@ function onGeoSuccess(position) {
             <br>🌡&nbsp ${Math.round(data.main.temp)}˚C
             <br>🏃‍♀️ ${Math.round(data.main.feels_like)}˚C
             <br>💧&nbsp ${data.main.humidity}%`;
+            city.classList.add("text-dark");
+            weather.classList.add("text-dark");
         });
 }
 
