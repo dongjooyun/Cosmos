@@ -1,5 +1,7 @@
 const wholeClock = document.querySelector("#wholeClock");
 const clock = document.querySelector("#clock");
+const am = document.querySelector("#AM");
+const pm = document.querySelector("#PM");
 
 function getClock() {
     const date = new Date();
@@ -10,24 +12,35 @@ function getClock() {
         if (curHour === 0) {
             const hours = String(curHour + 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
+            am.classList.remove("hidden");
+            pm.classList.add("hidden");
+
         }
         else if (curHour >= 18) {
             const hours = String(curHour - 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
+            pm.classList.remove("hidden");
+            am.classList.add("hidden");
         }
         else {
             const hours = String(curHour).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
+            am.classList.remove("hidden");
+            pm.classList.add("hidden");
         }
     }
     else { // 새벽 6시 ~ 오후 5시
-        if (curHour > 12) {
+        if (curHour >= 12) {
             const hours = String(curHour - 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
+            pm.classList.remove("hidden");
+            am.classList.add("hidden");
         }
         else {
             const hours = String(curHour).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
+            am.classList.remove("hidden");
+            pm.classList.add("hidden");
         }
     }
 }
@@ -35,32 +48,4 @@ function getClock() {
 getClock();
 setInterval(getClock, 1000);
 
-const am = document.createElement("span");
-const pm = document.createElement("span");
-am.innerText = "AM";
-pm.innerText = "PM";
-am.classList.add("am");
-pm.classList.add("pm");
-
-const date = new Date();
-const hourAMPM = date.getHours();
-
-if (hourAMPM >= 18 || hourAMPM < 6) {
-    if (hourAMPM === 0) {
-        wholeClock.appendChild(am);
-    }
-    else if (hourAMPM >= 18) {
-        wholeClock.appendChild(pm);
-    }
-    else {
-        wholeClock.appendChild(am);
-    }
-}
-else {
-    if (hourAMPM >= 12) {
-        wholeClock.appendChild(pm);
-    }
-    else {
-        wholeClock.appendChild(am);
-    }
-}
+console.log(clock.innerText.substring(0, 2));
