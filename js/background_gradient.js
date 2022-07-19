@@ -19,7 +19,7 @@ const colors = [
     "#ff3f34"
 ];
 
-const btn = document.querySelector("button");
+const btn = document.querySelector("#changeBGbtn");
 
 function changeBGcolor() {
     const a = colors[Math.round(Math.random() * colors.length)];

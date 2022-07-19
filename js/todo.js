@@ -22,10 +22,16 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
+    const deleteConfirmMsg = "Are you sure deleting this todo?"
     const li = event.target.parentElement;
-    li.remove();
-    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-    saveToDos();
+    if (confirm(deleteConfirmMsg)) {
+        li.remove();
+        toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+        saveToDos();
+    }
+    else {
+        // Do nothing
+    }
     // addArchives(toDo);
     // saveArchives();
 }
@@ -40,7 +46,7 @@ function paintToDo(newToDo) {
     const button = document.createElement("button");
     button.innerText = "✔";
     button.type = "button";
-    button.classList.add("btn", "btn-light", "border-0", "btn-lg", "shadow-sm");
+    button.classList.add("btn", "btn-light", "btn-sm", "border-0", "btn-lg", "shadow-sm");
     button.addEventListener("click", deleteToDo);
     li.appendChild(button);
     li.appendChild(span);
@@ -56,9 +62,14 @@ function handleToDoSubmit(event) {
         text: newToDo,
         id: Date.now()
     };
-    toDos.push(newToDoObj);
-    paintToDo(newToDoObj);
-    saveToDos();
+    if (toDos.length < 9) {
+        toDos.push(newToDoObj);
+        paintToDo(newToDoObj);
+        saveToDos();
+    }
+    else {
+        alert("Sorry, maximum ToDos are 9.");
+    }
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);

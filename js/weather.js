@@ -1,3 +1,4 @@
+const weatherRefresh = document.querySelector("#refreshWeatherBtn");
 const API_KEY = "efb90cccd925133f0431e6dda142358d";
 
 function onGeoSuccess(position) {
@@ -23,4 +24,9 @@ function onGeoError() {
     alert("Can't find user. Sorry, No weather for user.")
 }
 
-navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+function handleWeatherRefresh() {
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+}
+
+handleWeatherRefresh();
+weatherRefresh.addEventListener("click", handleWeatherRefresh);
