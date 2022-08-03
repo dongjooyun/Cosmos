@@ -1,11 +1,26 @@
-const images = [
-    "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "9.jpg", "10.jpg"
-];
+const images = []
 
-const chosenImage = images[Math.floor(Math.random() * images.length)];
+const LASTIMGNUM = 13; // 배경 이미지 총 개수
 
-const bgImage = document.createElement("img");
+for (let i = 1; i <= LASTIMGNUM; i++) {
+    const title = `${i}.jpg`;
+    images.push(title);
+}
 
-bgImage.src = `image/${chosenImage}`;
+const btn = document.querySelector("#changeBGbtn");
 
-document.body.appendChild(bgImage);
+const background = document.querySelector("#bgImage");
+
+function changeBG() {
+    const chosenImage = images[Math.floor(Math.random() * images.length)];
+
+    background.src = `image/${chosenImage}`;
+
+    // src = `image/${chosenImage}`;
+    // document.body.style.backgroundImage = "url('" + src + "')";
+}
+
+changeBG();
+setInterval(changeBG, 86400000); // update everyday
+
+btn.addEventListener("click", changeBG);

@@ -11,7 +11,7 @@ img {
 	right: 0px;
 	bottom: 0px;
 	z-index: -1;
-	opacity: 70%;
+	opacity: 85%;
 }
 
 #BGguide {
@@ -64,7 +64,7 @@ img {
 	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
 	font-family: "Pretendard";
-	opacity: 80%;
+	opacity: 90%;
 }
 
 #AM,
@@ -74,7 +74,7 @@ img {
 	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
 	font-size: 125px;
-	opacity: 80%;
+	opacity: 90%;
 	font-family: "Pretendard";
 }
 
@@ -90,7 +90,7 @@ input {
 	font-size: 60px;
 	font-style: italic;
 	background-color: transparent;
-	opacity: 70%;
+	opacity: 90%;
 	font-family: "Pretendard";
 	cursor: pointer;
 	border-width: 4px;
@@ -110,7 +110,7 @@ input {
 	font-size: 60px;
 	/* text-shadow: 0.5px 0.5px 3px #444444; */
 	font-family: "Pretendard";
-	opacity: 80%;
+	opacity: 90%;
 }
 
 #todoInput {
@@ -121,7 +121,7 @@ input {
 	padding-left: 10px;
 	cursor: pointer;
 	background-color: transparent;
-	opacity: 70%;
+	opacity: 90%;
 	border-width: 4px;
 	border-top: none;
 	border-right: none;
@@ -133,7 +133,7 @@ input {
 
 ::placeholder {
 	color: #eeeeee;
-	opacity: 80%;
+	opacity: 90%;
 }
 
 li {
@@ -145,7 +145,7 @@ li {
 	list-style: none;
 	font-family: "Pretendard";
 	font-weight: 500;
-	opacity: 80%;
+	opacity: 90%;
 }
 
 .saying {
@@ -161,7 +161,7 @@ li {
 
 #quote {
 	font-family: "DX영화자막";
-	opacity: 70%;
+	opacity: 80%;
 }
 
 #windowSizeGuide {

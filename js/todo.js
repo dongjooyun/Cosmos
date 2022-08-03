@@ -36,6 +36,31 @@ function deleteToDo(event) {
     // saveArchives();
 }
 
+function todoChecked(event) {
+    const btn = event.target;
+    const txt = event.target.nextElementSibling;
+    console.log(event.target.nextElementSibling);
+    btn.classList.remove("fa-regular", "fa-square");
+    btn.classList.add("fa-regular", "fa-square-check");
+    txt.classList.add("text-decoration-line-through");
+}
+
+function todoUnchecked(event) {
+    const btn = event.target;
+    btn.classList.remove("fa-regular", "fa-square-check", "text-decoration-line-through");
+    btn.classList.add("fa-regular", "fa-square");
+}
+
+function toggleCheck(event) {
+    const btn = event.target;
+    if (btn.classList[1] === "fa-square") {
+        todoChecked(event);
+    }
+    else {
+        todoUnchecked(event);
+    }
+}
+
 function paintToDo(newToDo) {
     const li = document.createElement("li");
     li.id = newToDo.id;
@@ -43,14 +68,21 @@ function paintToDo(newToDo) {
     span.type = "checkbox";
     span.innerText = `${newToDo.text}`;
     span.classList.add("ml-3");
-    const button = document.createElement("button");
-    button.innerText = "✔";
-    button.type = "button";
-    button.classList.add("btn", "btn-light", "btn-sm", "border-0", "btn-lg", "shadow-sm");
-    button.addEventListener("click", deleteToDo);
-    li.appendChild(button);
+    const btn = document.createElement("i");
+    btn.classList.add("fa-regular", "fa-square");
+    // btn.addEventListener("click", deleteToDo);
+    btn.addEventListener("click", toggleCheck);
+    li.appendChild(btn);
+    // const button = document.createElement("button");
+    // button.innerText = "✔";
+    // button.type = "button";
+    // button.id = "checkbox";
+    // button.classList.add("btn", "btn-light", "btn-sm", "border-0");
+    // button.addEventListener("click", deleteToDo);
+    // li.appendChild(button);
     li.appendChild(span);
     li.classList.add("mb-3");
+
     toDoList.appendChild(li);
 }
 
