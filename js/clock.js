@@ -30,7 +30,13 @@ function getClock() {
         }
     }
     else { // 새벽 6시 ~ 오후 5시
-        if (curHour >= 12) {
+        if (curHour === 12) {
+            const hours = String(curHour).padStart(2, "0");
+            clock.innerText = `${hours}:${minutes}`;
+            pm.classList.remove("hidden");
+            am.classList.add("hidden");
+        }
+        else if (curHour > 12) {
             const hours = String(curHour - 12).padStart(2, "0");
             clock.innerText = `${hours}:${minutes}`;
             pm.classList.remove("hidden");
@@ -43,9 +49,10 @@ function getClock() {
             pm.classList.add("hidden");
         }
     }
+
 }
 
 getClock();
 setInterval(getClock, 1000);
 
-console.log(clock.innerText.substring(0, 2));
+// console.log(clock.innerText.substring(0, 2));
