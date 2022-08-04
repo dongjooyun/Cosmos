@@ -16,21 +16,21 @@ img {
 
 #BGguide {
 	font-size: 15px;
-	top: 42px;
-	position: absolute;
-	right: 80px;
 	color: #eeeeee;
-	opacity: 75%;
 	font-family: "Pretendard";
 }
 
 #changeBGbtn {
-	position: absolute;
-	top: 30px;
-	right: 45px;
-	opacity: 75%;
 	background-color: transparent;
 	padding: 0px;
+	/* padding-bottom: 10px; */
+}
+
+#changeBGs {
+	position: absolute;
+	top: 50px;
+	right: 60px;
+	opacity: 75%;
 }
 
 #weather {
@@ -38,24 +38,21 @@ img {
 	font-size: 17px;
 	top: 50px;
 	left: 60px;
-	font-weight: bold;
 	font-family: "Pretendard";
 	background-color: transparent;
 	opacity: 75%;
-	/* filter: alpha(opacity=30); */
 }
 
 #refreshWeatherBtn {
 	background-color: transparent;
 	padding: 0px;
-	opacity: 75%;
 	margin-left: 100px;
 	margin-bottom: -10px;
 	margin-right: -10px;
 }
 
 .clockContainer {
-	margin-top: 200px;
+	margin-top: 250px;
 }
 
 #clock {
@@ -148,9 +145,29 @@ li {
 	opacity: 90%;
 }
 
+i {
+	cursor: pointer;
+}
+
+.my-2 {
+	border-color: #eeeeee;
+	opacity: 60%;
+}
+.my-3 {
+	border-color: #eeeeee;
+	opacity: 60%;
+}
+.my-5 {
+	border-color: #eeeeee;
+	opacity: 60%;
+	margin-left: 1000px;
+	margin-right: 1000px;
+	border-top-width: 2px;
+}
+
 .saying {
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .quoteSet {
@@ -167,8 +184,11 @@ li {
 #windowSizeGuide {
 	color: #eeeeee;
 	font-family: "Pretendard";
+}
+
+#endNote {
 	position: absolute;
 	bottom: 30px;
-	right: 30px;
+	right: 40px;
 	opacity: 70%;
 }

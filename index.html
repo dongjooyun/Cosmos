@@ -14,74 +14,78 @@
 
 <body>
     <img id="bgImage">
-    <div class="container">
-        <div id="changeBGs" class="row">
+    <div id="changeBGs" class="row">
+        <div class="shadow p-2 rounded">
             <span id="BGguide">
                 🎨👉
             </span>
-            <button id="changeBGbtn" class="btn btn-light border-0 btn-lg mt-2">🔀</button>
+            <button id="changeBGbtn" class="btn btn-light border-0 btn-lg">🔀</button>
         </div>
-        <div id="weather" class="row">
-            <div class="col-lg-12 shadow p-3 rounded bg-light">
-                <span></span>
-                <span></span>
-                <br>
-                <button id="refreshWeatherBtn" class="btn btn-light border-0 btn-lg mt-2">🔄</button>
+    </div>
+    <div id="weather" class="row">
+        <div class="col-lg-12 shadow p-3 rounded">
+            <span></span>
+            <span></span>
+            <br>
+            <button id="refreshWeatherBtn" class="btn btn-light border-0 btn-lg mt-1">🔄</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="clockContainer col-lg-12 mx-auto d-flex">
+            <div id="wholeClock" class="mx-auto">
+                <span id="clock"></span>
+                <span id="AM">AM</span>
+                <span id="PM">PM</span>
             </div>
         </div>
-        <div class="row">
-            <div class="clockContainer col-lg-12 mx-auto d-flex">
-                <div id="wholeClock" class="mx-auto">
-                    <span id="clock"></span>
-                    <span id="AM">AM</span>
-                    <span id="PM">PM</span>
-                </div>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
+            <form class="hidden mx-auto m-2" id="login-form">
+                <input required id="loginInput" maxlength="15" type="text" title="Your name"
+                    placeholder="Type your name here." />
+            </form>
         </div>
-        <div class="row">
-            <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
-                <form class="hidden mx-auto m-2" id="login-form">
-                    <input required id="loginInput" maxlength="15" type="text" title="Your name"
-                        placeholder="Type your name here." />
-                </form>
-            </div>
+    </div>
+    <div class="row">
+        <div class="greetingContainer col-lg-offset-2 col-lg-10 mx-auto d-flex m-2">
+            <h1 id="greeting" class="hidden mx-auto"></h1>
         </div>
-        <div class="row">
-            <div class="greetingContainer col-lg-12 mx-auto d-flex m-2">
-                <h1 id="greeting" class="hidden mx-auto"></h1>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
+            <form id="todo-form" class="mx-auto mt-5">
+                <input required id="todoInput" type="text" title="Your todo" placeholder="Add your ToDo here." />
+            </form>
         </div>
-        <div class="row">
-            <div class="col-lg-offset-2 col-lg-8 mx-auto d-flex">
-                <form id="todo-form" class="mx-auto mt-5">
-                    <input required id="todoInput" type="text" title="Your todo" placeholder="Add your ToDo here." />
-                </form>
-            </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-offset-2 col-lg-2 mx-auto d-flex">
+            <ul id="todo-list" class="mt-5"></ul>
         </div>
-        <div class="row">
-            <div class="col-lg-offset-3 col-lg-6 mx-auto d-flex">
-                <ul id="todo-list" class="mt-5"></ul>
-            </div>
-        </div>
+    </div>
+
+    <footer class="py-1 mt-auto fixed-bottom">
         <hr class="my-5">
-        <footer class="py-1 mt-auto fixed-bottom">
-            <div id="quote" class="row col-12 mx-auto d-flex">
-                <div class="mx-auto quoteSet mb-4 shadow p-3 rounded">
-                    <span class="font-italic"></span>
-                    <hr class="my-3">
-                    <span></span>
-                </div>
+        <div id="quote" class="row col-12 mx-auto d-flex">
+            <div class="mx-auto quoteSet mb-4 shadow p-3 rounded">
+                <span class="font-italic"></span>
+                <hr class="my-3 pl-3 pr-3">
+                <span></span>
             </div>
-            <div id="endNote" class="row col-12">
-                <span id="windowSizeGuide" class="text-right">
-                    ※ This webpage best fits at 3840×2160.
+        </div>
+        <div id="endNote" class="row">
+            <div class="shadow p-2 rounded">
+                <span id="windowSizeGuide">
+                    ⚠ This webpage best fits at 3840×2160.
                     <br>
-                    ※ Max ToDo length == 9
-                    <br>
+                    ⚠ Max ToDo length == 9
+                    <br><br>
                     ⓒ 2022 <a href="https://github.com/dongjooyun" target="_blank">djyun</a>. All rights reserved.
                 </span>
             </div>
-        </footer>
+        </div>
+    </footer>
     </div>
     <script src="js/greetings.js"></script>
     <script src="js/clock.js"></script>

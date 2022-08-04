@@ -15,13 +15,13 @@ function onGeoSuccess(position) {
             <br>🌡&nbsp ${Math.round(data.main.temp)}˚C
             <br>🏃‍♀️ ${Math.round(data.main.feels_like)}˚C
             <br>💧&nbsp ${data.main.humidity}%`;
-            city.classList.add("text-dark");
-            weather.classList.add("text-dark");
+            city.classList.add("text-light");
+            weather.classList.add("text-light");
         });
 }
 
 function onGeoError() {
-    alert("Can't find user. Sorry, No weather for user.")
+    alert("DISCONNECTION: Can't find user location.")
 }
 
 function handleWeatherRefresh() {

@@ -1,6 +1,6 @@
 const images = []
 
-const LASTIMGNUM = 13; // 배경 이미지 총 개수
+const LASTIMGNUM = 10; // 배경 이미지 총 개수
 
 for (let i = 1; i <= LASTIMGNUM; i++) {
     const title = `${i}.jpg`;
