@@ -64,25 +64,24 @@ function toggleCheck(event) {
 function paintToDo(newToDo) {
     const li = document.createElement("li");
     li.id = newToDo.id;
+
     const span = document.createElement("span");
     span.type = "checkbox";
     span.innerText = `${newToDo.text}`;
     span.classList.add("ml-3");
-    const btn = document.createElement("i");
-    btn.classList.add("fa-regular", "fa-square");
-    // btn.addEventListener("click", deleteToDo);
-    btn.addEventListener("click", toggleCheck);
-    li.appendChild(btn);
-    // const button = document.createElement("button");
-    // button.innerText = "✔";
-    // button.type = "button";
-    // button.id = "checkbox";
-    // button.classList.add("btn", "btn-light", "btn-sm", "border-0");
-    // button.addEventListener("click", deleteToDo);
-    // li.appendChild(button);
+
+    const checkBox = document.createElement("i");
+    checkBox.classList.add("fa-regular", "fa-square");
+
+    const deleteX = document.createElement("i");
+    deleteX.classList.add("fa-solid", "fa-xmark");
+
+    checkBox.addEventListener("click", toggleCheck);
+    deleteX.addEventListener("click", deleteToDo);
+    li.appendChild(checkBox);
+    li.appendChild(deleteX);
     li.appendChild(span);
     li.classList.add("mb-3");
-
     toDoList.appendChild(li);
 }
 

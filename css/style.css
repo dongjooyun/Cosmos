@@ -96,6 +96,7 @@ input {
 	border-left: none;
 	border-bottom-color: #eeeeee;
 }
+
 .greetingContainer {
 	width: 1000px;
 	box-sizing: content-box;
@@ -147,6 +148,14 @@ li {
 
 i {
 	cursor: pointer;
+}
+
+.fa-xmark {
+	position: absolute;
+	right: 10px;
+	margin-top: 5px;
+	margin-right: 50px;
+	opacity: 50%;
 }
 
 .my-2 {
