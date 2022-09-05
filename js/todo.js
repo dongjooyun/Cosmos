@@ -112,15 +112,14 @@ function handleToDoSubmit(event) {
         text: newToDo,
         id: Date.now()
     };
-    if (toDos.length < 12) {
+    if (toDos.length < 8) {
         toDos.push(newToDoObj);
         paintToDo(newToDoObj);
         saveToDos();
     }
     else {
-        // alert("Sorry, maximum ToDos are 9.");
         swal({
-            text: "Sorry, maximum ToDo length is 9.",
+            text: "Sorry, maximum ToDo length is 8.",
             icon: "error",
             buttons: false,
             timer: 2000
