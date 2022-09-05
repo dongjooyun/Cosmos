@@ -21,6 +21,6 @@ function changeBG() {
 }
 
 changeBG();
-setInterval(changeBG, 86400000); // update everyday
+setInterval(changeBG, 3600000); // update every hour
 
 btn.addEventListener("click", changeBG);

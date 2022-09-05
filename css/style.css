@@ -14,6 +14,11 @@ img {
 	opacity: 85%;
 }
 
+.row {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
 #BGguide {
 	font-size: 15px;
 	color: #eeeeee;
@@ -23,7 +28,6 @@ img {
 #changeBGbtn {
 	background-color: transparent;
 	padding: 0px;
-	/* padding-bottom: 10px; */
 }
 
 #changeBGs {
@@ -37,7 +41,7 @@ img {
 	position: absolute;
 	font-size: 17px;
 	top: 50px;
-	left: 60px;
+	left: 45px;
 	font-family: "Pretendard";
 	background-color: transparent;
 	opacity: 75%;
@@ -58,7 +62,6 @@ img {
 #clock {
 	color: #eeeeee;
 	font-size: 250px;
-	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
 	font-family: "Pretendard";
 	opacity: 90%;
@@ -66,9 +69,8 @@ img {
 
 #AM,
 #PM {
-	padding-left: 20px;
+	padding-left: 10px;
 	color: #eeeeee;
-	/* text-shadow: -1px -1px 3px #444444; */
 	font-weight: 500;
 	font-size: 125px;
 	opacity: 90%;
@@ -85,12 +87,11 @@ input {
 	display: block;
 	padding-left: 15px;
 	font-size: 60px;
-	font-style: italic;
 	background-color: transparent;
 	opacity: 90%;
 	font-family: "Pretendard";
 	cursor: pointer;
-	border-width: 4px;
+	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
@@ -106,21 +107,20 @@ input {
 	color: #eeeeee;
 	text-align: center;
 	font-size: 60px;
-	/* text-shadow: 0.5px 0.5px 3px #444444; */
+	margin-top: 19px;
 	font-family: "Pretendard";
 	opacity: 90%;
 }
 
 #todoInput {
 	font-size: 30px;
-	font-style: italic;
 	font-family: "Pretendard";
 	color: #eeeeee;
 	padding-left: 10px;
 	cursor: pointer;
 	background-color: transparent;
 	opacity: 90%;
-	border-width: 4px;
+	border-width: 3px;
 	border-top: none;
 	border-right: none;
 	border-left: none;
@@ -160,18 +160,19 @@ i {
 
 .my-2 {
 	border-color: #eeeeee;
-	opacity: 60%;
+	opacity: 30%;
 }
 .my-3 {
 	border-color: #eeeeee;
-	opacity: 60%;
+	opacity: 20%;
+	border-top-width: 2px;
 }
 .my-5 {
 	border-color: #eeeeee;
-	opacity: 60%;
-	margin-left: 1000px;
-	margin-right: 1000px;
-	border-top-width: 2px;
+	opacity: 20%;
+	margin-left: 1200px;
+	margin-right: 1200px;
+	border-top-width: 2.5px;
 }
 
 .saying {
@@ -200,4 +201,17 @@ i {
 	bottom: 30px;
 	right: 40px;
 	opacity: 70%;
+}
+
+.swal-modal {
+	width: 30rem;
+	opacity: 50%;
+}
+
+.swal-text {
+	font-family: "Pretendard";
+}
+
+swal-button {
+	font-family: "Pretendard";
 }

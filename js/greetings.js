@@ -10,13 +10,13 @@ const emojis = [
 ];
 
 const comments = [
-    "Hope you had a nice weekend,",
+    "Hope you had a nice day,",
     "Have a great week,",
     "Every day is a gift,",
     "Keep going your way,",
-    "Prove them wrong,",
+    "Spread your wings,",
     "You can totally do this,",
-    "Take some rest,",
+    "Happy weekend,",
 ];
 
 function onLoginSubmit(event) {
@@ -36,7 +36,7 @@ function paintGreetings(username) {
     const date = new Date();
     const todayComment = comments[date.getDay()];
     changeGreeting(todayComment, username);
-    setInterval(changeGreeting, 10000, todayComment, username);
+    setInterval(changeGreeting, 600000, todayComment, username); // update every 10 minutes
     greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 

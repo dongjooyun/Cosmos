@@ -22,16 +22,36 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-    const deleteConfirmMsg = "Are you sure deleting this todo?"
     const li = event.target.parentElement;
-    if (confirm(deleteConfirmMsg)) {
-        li.remove();
-        toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
-        saveToDos();
-    }
-    else {
-        // Do nothing
-    }
+
+    swal({
+        // title: "Are you sure?",
+        text: "Are you sure deleting this ToDo?",
+        icon: "warning",
+        buttons: ["NO", "YES"],
+        // dangerMode: true,
+    }).then(willDelete => {
+        if (willDelete) {
+            li.remove();
+            toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
+            saveToDos();
+            swal({
+                // title: "Deleted!",
+                text: "The ToDo just deleted.",
+                icon: "success",
+                buttons: false,
+                timer: 1500
+            });
+        }
+        else {
+            swal({
+                text: "The todo is safe!",
+                icon: "info",
+                buttons: false,
+                timer: 1500
+            });
+        }
+    });
     // addArchives(toDo);
     // saveArchives();
 }
@@ -39,7 +59,6 @@ function deleteToDo(event) {
 function todoChecked(event) {
     const btn = event.target;
     const txt = event.target.nextElementSibling;
-    console.log(event.target.nextElementSibling);
     btn.classList.remove("fa-regular", "fa-square");
     btn.classList.add("fa-regular", "fa-square-check");
     txt.classList.add("text-decoration-line-through");
@@ -93,13 +112,19 @@ function handleToDoSubmit(event) {
         text: newToDo,
         id: Date.now()
     };
-    if (toDos.length < 9) {
+    if (toDos.length < 12) {
         toDos.push(newToDoObj);
         paintToDo(newToDoObj);
         saveToDos();
     }
     else {
-        alert("Sorry, maximum ToDos are 9.");
+        // alert("Sorry, maximum ToDos are 9.");
+        swal({
+            text: "Sorry, maximum ToDo length is 9.",
+            icon: "error",
+            buttons: false,
+            timer: 2000
+        });
     }
 }
 

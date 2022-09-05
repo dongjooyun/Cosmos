@@ -13,13 +13,12 @@ function onGeoSuccess(position) {
             city.innerText = `📍 ${data.name}`;
             weather.innerHTML = `<hr class="my-2"> ${data.weather[0].description}
             <br>🌡&nbsp ${Math.round(data.main.temp)}˚C
-            <br>🏃‍♀️ ${Math.round(data.main.feels_like)}˚C
             <br>💧&nbsp ${data.main.humidity}%`;
             city.classList.add("text-light");
             weather.classList.add("text-light");
         });
 }
-
+// <br>🏃‍♀️ ${Math.round(data.main.feels_like)}˚C
 function onGeoError() {
     alert("DISCONNECTION: Can't find user location.")
 }
